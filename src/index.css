@@ -1,0 +1,80 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+    --clr-dark-blue: #12131a;
+    --clr-lightish-dark-blue: #21222c;
+    --clr-purplish: #d3a0fa;
+    --clr-yellowish: #ff9f00;
+    --clr-pinkish: #fe8159;
+    --clr-light-text: #e4e4ef;
+    --clr-almost-white: #f2f2f7;
+}
+
+
+body {
+    font-family: "DM Sans", sans-serif;
+}
+
+
+
+input,
+textarea {
+    font-family: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: revert;
+}
+
+h2 {
+    line-height: 1;
+}
+
+input:active,
+input:focus,
+textarea:active,
+textarea:focus {
+    outline: 0;
+
+}
+
+textarea {
+    resize: none;
+    /* transition: background-color  300ms ease  ; */
+    padding: 1rem;
+    /* box-shadow: 0px 0px 8px 8px var(--clr-purplish); */
+    transition: box-shadow 200ms ease;
+}
+
+
+textarea:active,
+textarea:focus {
+    box-shadow: 0px 0px 5px 3px var(--clr-purplish);
+    border-color: var(--clr-purplish);
+}
+
+
+.info-card {
+    color: var(--clr-dark-blue);
+}
+
+.check-box-square {
+    padding: 2px 4px;
+    border-radius: 4px;
+    color: var(--clr-dark-blue);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+    /* border: 1px solid white; */
+    border-radius: 4px;
+    width: 80px;
+    font-size: 15px;
+    padding: 2px 3px;
+}
