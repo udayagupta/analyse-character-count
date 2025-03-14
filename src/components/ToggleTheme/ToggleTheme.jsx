@@ -7,9 +7,9 @@ const ToggleTheme = () => {
 
   const { isDarkMode, setIsDarkMode } = useTheme()
 
+
   useEffect(() => {
     let html = document.querySelector('html')
-    // localStorage.setItem('isDarkMode', JSON.stringify(isDarkMode))
 
     if (isDarkMode) {
       html.classList.add('dark')

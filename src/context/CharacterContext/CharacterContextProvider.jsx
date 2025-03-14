@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react'
 import CharacterContext from './CharacterContext'
 
 const CharacterContextProvider = ({ children }) => {
-  const [text, setText] = useState("This is some text")
+  const [text, setText] = useState("")
   const [charactersLimit, setCharactersLimit] = useState(100)
   
 

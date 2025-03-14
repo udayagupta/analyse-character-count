@@ -1,31 +1,16 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
+import { timeByWords } from '../../utils'
 
-export const ReadingTime = () => {
+export const ReadingTime = ({wordsCount}) => {
 
-  // TAKE WORDS OR CHARACTER FROM CONTEXT
+  const [time, setTime] = useState(timeByWords(wordsCount))
 
-  const timeByWords = (words) => {
-    // Words by minutes
-    const WPM = 200;
-    const time = Math.ceil(words / WPM);
+  useEffect(() => {
+    setTime(timeByWords(wordsCount))
+  }, [wordsCount])
 
-    if (time <= 1) return `<1 Minute(s)`;
-
-    return `${time} Minute(s)`;
-  }
-
-  const timeByCharacters = (characters) => {
-    // Characters by minutes
-    const CPM = 900;
-    const time = Math.ceil(characters / CPM);
-
-    if (time <= 1) return '<1 Minute(s)';
-
-    return `${time} Minute(s)`;
-
-  }
 
   return (
-    <p>Approx. reading time: </p>
+    <p>Approx. reading time: {wordsCount === 0 ? 'None' : time}</p>
   )
 }

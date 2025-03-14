@@ -10,3 +10,5 @@ const TextStats = React.createContext({
     excludeSpaces: false,
     setExcludeSpaces: () => {},
 })
+
+export default TextStats;
